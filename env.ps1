@@ -1,0 +1,13 @@
+Set-Item -Path Env:MINIO_ACCESS_KEY -Value 'minioadmin';
+Set-Item -Path Env:MINIO_SECRET_ACCESS_KEY -Value 'minioadmin';
+Set-Item -Path Env:S3_ENDPOINTURL -Value 'http://127.0.0.1:9000';
+Set-Item -Path Env:VCAP_SERVICES -Value '{"user-provided": [{"credentials": {"access_key_id": "${MINIO_ACCESS_KEY:?missing}", "bucket": "moviefun", "secret_access_key": "${MINIO_SECRET_ACCESS_KEY:?missing}", "endpoint": "http://127.0.0.1:9000"}, "name": "photo-storage"}]}';
+Set-Item -Path Env:APPLICATION_OAUTH_ENABLED -Value 'false';
+Set-Item -Path Env:EUREKA_CLIENT_ENABLED -Value 'false';
+Set-Item -Path Env:RIBBON_EUREKA_ENABLED -Value 'false';
+Set-Item -Path Env:ALBUM_SERVICE_RIBBON_LISTOFSERVERS -Value 'http://localhost:8081';
+Set-Item -Path Env:MOVIE_SERVICE_RIBBON_LISTOFSERVERS -Value 'http://localhost:8082';
+Set-Item -Path Env:MOVIES_PAGESIZE -Value '6';
+Set-Item -Path Env:MOVIES_URL -Value 'http://localhost:8082/movies';
+Set-Item -Path Env:ALBUMS_URL -Value 'http://localhost:8081/albums';
+Set-Item -Path Env:APPLICATION_OAUTH_ENABLED -Value 'false';
