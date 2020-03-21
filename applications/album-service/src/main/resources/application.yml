@@ -1,12 +1,14 @@
 server.port: 8081
 
 spring:
+  application:
+    name: album-service
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
 
   datasource:
     url: jdbc:mysql://localhost:3306/albums?useSSL=false
-    username: root
+    username: tracker
     tomcat:
       max-active: 4
       max-idle: 4
